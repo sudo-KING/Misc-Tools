@@ -125,7 +125,7 @@ echo ""
 if [[ $prompt == "y" || $prompt == "Y" || $prompt == "yes" || $prompt == "Yes" ]]
 then
 
-#CHECKiTBITCH
+#CHECKitBITCH
 Out='scannedBITCH.txt'
 
 echo -e "We are now going to look for some 'Interesting Findings'"
