@@ -62,7 +62,6 @@ echo -e "                      $LIGHTGREEN Happy Hunting!!"$NC
 sleep 4
 echo ""
 
-
 echo -e "$RED Checking if Target is 'ping'able:"$NC
 sleep 2
 ping -w 5 $text| tee -a scannedBITCH.txt
@@ -134,11 +133,13 @@ echo -e "Sit the$RED FU(K$NC down, pull out a$GREEN Bong$NC and relax..."
 echo -e "We'll let you know when it's done, or if anything is note worthy!"
 echo ""
 sleep 3;
+
 echo -e "$RED Is it Alive?:" $NC ;
 grep 'ping statistics' $Out
 grep 'packets transmitted*' $Out
 sleep 2;
 echo ""
+
 echo -e "$RED Lets see who this MoFo is:" $NC ;
 grep 'OrgName' $Out
 grep 'Address' $Out
@@ -147,10 +148,12 @@ grep 'StateProv' $Out
 grep 'Country' $Out
 sleep 2;
 echo ""
+
 echo -e "$RED What open ports and services is this MoFo running?:" $NC ;
 grep -i open /opt/tools/SCANitBITCH/tmp/nmapBITCH.out
 echo ""
 sleep 2;
+
 read -p "Do you want to clean up the Nmap Scan output from your machine? " prompt
 echo ""
 if [[ $prompt == "y" || $prompt == "Y" || $prompt == "yes" || $prompt == "Yes" ]]
