@@ -34,7 +34,7 @@ echo -e '         ((/ __| || | __((/ __| |/ / (_)_   _|| _ )_ _||_   _((/ __| ||
 echo -e '          | (__| __ | _| | (__  | <  | | | |  | _ \| |   | |  | (__| __ | '
 echo -e '           \___|_||_|___| \___|_|\_\ |_| |_|  |___/___|  |_|   \___|_||_| ' 
 echo "" $NC
-echo -e "                   $LIGHTBLUE Brought To You BY:" "$YELLOW .0. sudo_KING"
+echo -e "                   $LIGHTBLUE Brought To You BY:" "$YELLOW .0. sudo_KING" $NC
 
 Out='scannedBITCH.txt'
 
