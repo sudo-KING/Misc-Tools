@@ -3,6 +3,7 @@
 #simple info gathering script    <3     .0. sudo_KING
 
 #change log: Version 0.6 added RitX (Reverse DNS-IP lookup)
+#change log: Version 0.7 added a parsing feature called CHECKitBITCH for the output of SCANitBITCH (scannedBITCH.txt)
 
 
 BLACK='\e[0;30m'
@@ -106,11 +107,10 @@ echo ""
 
 echo -e "$RED Beginning nmap (Network Mapping) scan... \n $LIGHTCYAN Be patient young grasshopper!"$NC
 sleep 2
-sudo nmap -sS -T2 -A -O -sV -sC -PN --script=/tools/vulscan/vulscan.nse --script-args vulscandb=cve.csv $text | tee -a scannedBITCH.txt
+sudo nmap -sS -T2 -oG /opt/tools/SCANitBITCH/tmp/nmapBITCH.out -A -O -sV -sC -PN --script=/opt/tools/vulscan/vulscan$
 
 sleep 3
 echo ""
-
 
 echo -e "$RED Beginning 'nikto' (Looking for Webserver and vulns) scan... \n $LIGHTCYAN HOLD ON TO YOUR ASS!"$NC
 sleep 2
@@ -120,8 +120,57 @@ echo ""
 
 echo -e "$LIGHTBLUE This scan is now finished.$RED For a detailed output please see: ~/'scannedBITCH.txt'"
 sleep 2
+echo ""
+read -p "Do you want to run CHECKitBITCH? (This parses your output for you): " prompt
+echo ""
+if [[ $prompt == "y" || $prompt == "Y" || $prompt == "yes" || $prompt == "Yes" ]]
+then
 
+#CHECKiTBITCH
+Out='scannedBITCH.txt'
 
-
+echo -e "We are now going to look for some 'Interesting Findings'"
+echo -e "Sit the$RED FU(K$NC down, pull out a$GREEN Bong$NC and relax..."
+echo -e "We'll let you know when it's done, or if anything is note worthy!"
+echo ""
+sleep 3;
+echo -e "$RED Is it Alive?:" $NC ;
+grep 'ping statistics' $Out
+grep 'packets transmitted*' $Out
+sleep 2;
+echo ""
+echo -e "$RED Lets see who this MoFo is:" $NC ;
+grep 'OrgName' $Out
+grep 'Address' $Out
+grep 'City' $Out
+grep 'StateProv' $Out
+grep 'Country' $Out
+sleep 2;
+echo ""
+echo -e "$RED What open ports and services is this MoFo running?:" $NC ;
+grep -i open /opt/tools/SCANitBITCH/tmp/nmapBITCH.out
+echo ""
+sleep 2;
+read -p "Do you want to clean up the Nmap Scan output from your machine? " prompt
+echo ""
+if [[ $prompt == "y" || $prompt == "Y" || $prompt == "yes" || $prompt == "Yes" ]]
+then
+rm /opt/tools/SCANitBITCH/tmp/nmapBITCH.out 
+echo -e "$RED Cleaned up output from nmap" $NC ;
+else
+echo -e "$RED Nothing was deleted! You dirty boy you!" $NC ;
+fi
+sleep 3;
+echo -e "$RED What possible ins do I have?:" $NC ;
+grep '+' $Out
+sleep 2;
+echo ""
+echo -e "$RED Take a$YELLOW L00K$RED:" $NC ;
+#grep further work in progress (WIP)  
+else
+echo ""
+echo -e "$RED Nothing was done, check the normal output (scannedBITCH.txt)" $NC ;
+fi
+sleep 3;
 
 #eof
