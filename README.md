@@ -1,26 +1,15 @@
-SCANitBITCH
+Misc Tools
 ===========
 
                    --=Simple Info Gathering Script=--
-                 
-               Called:
-            (                   )             (                   )  '
-            )\ )  (    (     ( /(       )  (  )\ )  *   )  (   ( /(  '
-           (()/(  )\   )\    )\())(  ( /(( )\(()/(` )  /(  )\  )\()) '
-            /(_)|((_|(((_)( ((_)\ )\ )\())((_)/(_))( )(_)|((_)((_)\  '
-           (_)) )\___)\ _ )\ _((_|(_|_))((_)_(_)) (_(_()))\___ _((_) '
-           / __((/ __(_)_\(_) \| |(_) |_ | _ )_ _||_   _((/ __| || | '
-           \__ \| (__ / _ \ | .` || |  _|| _ \| |   | |  | (__| __ | '
-           |___/ \___/_/ \_\|_|\_||_|\__||___/___|  |_|   \___|_||_| V0.7'
+       _____  .__                ___________           .__          
+      /     \ |__| ______ ____   \__    ___/___   ____ |  |   ______
+     /  \ /  \|  |/  ___// ___\    |    | /  _ \ /  _ \|  |  /  ___/
+    /    Y    \  |\___ \\  \___    |    |(  <_> |  <_> )  |__\___ \ 
+    \____|__  /__/____  >\___  >   |____| \____/ \____/|____/____  >
+            \/        \/     \/                                  \/
 
 Brought To You BY: sudo_KING
-
-
-All information found will be saved to: 'scannedBITCH.txt'
-
-NOTE:
-This script requires 'nmap', 'RitX' and 'nikto' installed to work properly.
-
 
 Disclaimer:
 Any actions and or activities related to the material contained within this Script are solely your responsibility.
