@@ -13,7 +13,7 @@ for user in $(cat <user wordlist>); do
     if [[ $http_code -eq 200 ]]; then
       echo "Success: User: '$user' Pass: '$pass'"
       break
-else echo  ""$user" and "$pass" tried" >> <Specify Location of and Name of Out File>
+else echo  ""$user" and "$pass" tried" >> <Specify Location and Name of Out File>
     fi
   done
 done
