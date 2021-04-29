@@ -15,5 +15,5 @@ PING google.com
 echo.
 timeout 2 > NUL
 echo Now Wasn't that just fun!?!?
-echo "<3 RC o_O"
+echo "<3 o_O"
 PAUSE
